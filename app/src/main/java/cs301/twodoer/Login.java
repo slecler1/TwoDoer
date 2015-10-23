@@ -1,5 +1,6 @@
 package cs301.twodoer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -16,6 +17,6 @@ public class Login extends AppCompatActivity {
     /** Called when the user clicks the Login button */
     public void buttonOnClick(View v) {
         Button button=(Button) v;
-        ((Button) v).setText("Authenticating");
+        startActivity(new Intent(getApplicationContext(), Home.class));
     }
 }
