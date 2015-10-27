@@ -2,6 +2,8 @@ package cs301.twodoer;
 
 import android.provider.BaseColumns;
 
+//Defines the variables used to access the data in the database
+//Works with the SQLite database that comes with Android Studio  (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
 public class TaskContract {
     public static final String DB_NAME = "com.example.TodoList.db.tasks";
     public static final int DB_VERSION = 1;
