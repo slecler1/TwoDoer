@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -88,15 +89,27 @@ public class Home extends AppCompatActivity {
             //Creates the actual Add Task menu
             case R.id.action_add_task:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+                LinearLayout lila1= new LinearLayout(this);
+                lila1.setOrientation(1); //1 is for vertical orientation
+
                 builder.setTitle("Add a task");
-                builder.setMessage("What do you want 2-do?");
+
                 final EditText inputField = new EditText(this);
-                builder.setView(inputField);
+                inputField.setHint("What do you want 2-do?");
+                lila1.addView(inputField);
+
+                final EditText input1 = new EditText(this);
+                input1.setHint("Priority: (1(High) - 3(Low)");
+                lila1.addView(input1);
+
+                builder.setView(lila1);
                 //Creates task in database   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
                 builder.setPositiveButton("Add Task", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String task = inputField.getText().toString();
+                        String priority = input1.getText().toString();
                         Log.d("MainActivity",task);
                         TaskDBHelper helper = new TaskDBHelper(Home.this);
                         SQLiteDatabase db = helper.getWritableDatabase();
