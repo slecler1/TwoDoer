@@ -100,7 +100,7 @@ public class Home extends AppCompatActivity {
                 lila1.addView(inputField);
 
                 final EditText input1 = new EditText(this);
-                input1.setHint("Priority: (1(High) - 3(Low)");
+                input1.setHint("Priority: 1(High) - 3(Low)");
                 lila1.addView(input1);
 
                 builder.setView(lila1);
