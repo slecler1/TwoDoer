@@ -57,22 +57,34 @@ public class Home extends AppCompatActivity {
     }
 
     //Deletes a task from the list when the "Done" button is clicked  (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
-    public void onDoneButtonClick(View view) {
-        View v = (View) view.getParent();
-        TextView taskTextView = (TextView) v.findViewById(R.id.taskTextView);
-        String task = taskTextView.getText().toString();
+    public void onDoneButtonClick(final View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Remove task");
+        builder.setMessage("Are you sure you want to remove this task?");
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
 
-        //SQL query to delete the record from the database
-        String sql = String.format("DELETE FROM %s WHERE %s = '%s'",
-                TaskContract.TABLE,
-                TaskContract.Columns.TASK,
-                task);
+                View v = (View) view.getParent();
+                TextView taskTextView = (TextView) v.findViewById(R.id.taskTextView);
+                String task = taskTextView.getText().toString();
+
+                //SQL query to delete the record from the database
+                String sql = String.format("DELETE FROM %s WHERE %s = '%s'",
+                        TaskContract.TABLE,
+                        TaskContract.Columns.TASK,
+                        task);
 
 
-        helper = new TaskDBHelper(Home.this);
-        SQLiteDatabase sqlDB = helper.getWritableDatabase();
-        sqlDB.execSQL(sql);
-        updateUI();
+                helper = new TaskDBHelper(Home.this);
+                SQLiteDatabase sqlDB = helper.getWritableDatabase();
+                sqlDB.execSQL(sql);
+                updateUI();
+            }
+        });
+        builder.setNegativeButton("Cancel",null);
+
+        builder.create().show();
     }
 
     //Adds the menu to the action bar in the Home activity   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
@@ -133,5 +145,7 @@ public class Home extends AppCompatActivity {
                 return false;
         }
     }
+
+
 }
 
