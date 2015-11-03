@@ -29,7 +29,7 @@
         android:layout_alignParentEnd="true"
         android:onClick="onDoneButtonClick" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/Priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,5 +39,5 @@
         android:layout_marginStart="87dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true" />-->
 </RelativeLayout>

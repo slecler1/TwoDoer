@@ -14,13 +14,12 @@
         android:id="@+id/list"
         android:layout_above="@+id/editText3" />
 
-    <EditText
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
         android:id="@+id/editText3"
-        android:text="0"
         android:layout_alignParentBottom="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30sp"
@@ -29,7 +28,7 @@
         android:textStyle="bold"
         android:gravity="right"/>
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/counter"

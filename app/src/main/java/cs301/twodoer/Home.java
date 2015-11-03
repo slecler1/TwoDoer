@@ -3,7 +3,9 @@ package cs301.twodoer;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +28,9 @@ import cs301.twodoer.TaskDBHelper;
 
 public class Home extends AppCompatActivity {
     private TaskDBHelper helper;
+   private int pointCount = 0;
+  //SharedPreferences pref = getSharedPreferences("Share", Context.MODE_PRIVATE);
+    //int pointCount = pref.getInt("Points", 0);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +59,10 @@ public class Home extends AppCompatActivity {
         );
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(listAdapter);
+
+
+        TextView pointView = (TextView) findViewById(R.id.editText3);
+        pointView.setText(pointCount + "");
     }
 
     //Deletes a task from the list when the "Done" button is clicked  (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
@@ -79,6 +88,14 @@ public class Home extends AppCompatActivity {
                 helper = new TaskDBHelper(Home.this);
                 SQLiteDatabase sqlDB = helper.getWritableDatabase();
                 sqlDB.execSQL(sql);
+
+                pointCount += 100;
+
+                //SharedPreferences.Editor edit = pref.edit();
+               // edit.putInt("Points", pointCount);
+               // edit.commit();
+
+
                 updateUI();
             }
         });
@@ -111,9 +128,9 @@ public class Home extends AppCompatActivity {
                 inputField.setHint("What do you want 2-do?");
                 lila1.addView(inputField);
 
-                final EditText input1 = new EditText(this);
-                input1.setHint("Priority: 1(High) - 3(Low)");
-                lila1.addView(input1);
+                //final EditText input1 = new EditText(this);
+               // input1.setHint("Priority: 1(High) - 3(Low)");
+                //lila1.addView(input1);
 
                 builder.setView(lila1);
                 //Creates task in database   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
@@ -121,7 +138,7 @@ public class Home extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String task = inputField.getText().toString();
-                        String priority = input1.getText().toString();
+                        //String priority = input1.getText().toString();
                         Log.d("MainActivity",task);
                         TaskDBHelper helper = new TaskDBHelper(Home.this);
                         SQLiteDatabase db = helper.getWritableDatabase();
