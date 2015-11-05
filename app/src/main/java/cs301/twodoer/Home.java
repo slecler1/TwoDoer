@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,16 +29,20 @@ import cs301.twodoer.TaskDBHelper;
 
 public class Home extends AppCompatActivity {
     private TaskDBHelper helper;
-   private int pointCount = 0;
-  //SharedPreferences pref = getSharedPreferences("Share", Context.MODE_PRIVATE);
-    //int pointCount = pref.getInt("Points", 0);
+   int pointCount;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        SharedPreferences app_preferences =
+                getSharedPreferences("temp", getApplicationContext().MODE_PRIVATE);
+        pointCount = app_preferences.getInt("counter", 0);
         updateUI(); //Updates the GUI when the app starts
     }
+
 
     //(Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
     private void updateUI() {
@@ -91,9 +96,11 @@ public class Home extends AppCompatActivity {
 
                 pointCount += 100;
 
-                //SharedPreferences.Editor edit = pref.edit();
-               // edit.putInt("Points", pointCount);
-               // edit.commit();
+                SharedPreferences app_preferences =
+                        getSharedPreferences("temp", getApplicationContext().MODE_PRIVATE);
+                SharedPreferences.Editor editor = app_preferences.edit();
+                editor.putInt("counter", pointCount);
+                editor.commit();
 
 
                 updateUI();
@@ -103,6 +110,7 @@ public class Home extends AppCompatActivity {
 
         builder.create().show();
     }
+
 
     //Adds the menu to the action bar in the Home activity   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
     @Override
