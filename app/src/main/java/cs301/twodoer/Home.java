@@ -5,6 +5,7 @@ import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -165,7 +166,9 @@ public class Home extends AppCompatActivity {
 
                 builder.create().show();
                 return true;
-
+            case R.id.action_games:
+                startActivity(new Intent(getApplicationContext(), Games.class));
+                return true;
             default:
                 return false;
         }

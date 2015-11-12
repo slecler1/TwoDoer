@@ -7,5 +7,9 @@
         android:showAsAction="always"
         android:icon="@android:drawable/ic_menu_add"
         android:title="Add Task" />
+    <item android:id="@+id/action_games"
+        android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Games" />
 
 </menu>
