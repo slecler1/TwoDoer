@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+//Creates the "Add Task" menu   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
+    <item android:id="@+id/action_add_task"
+        android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Add Task" />
+    <item android:id="@+id/action_games"
+        android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Games" />
+
+</menu>
