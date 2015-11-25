@@ -26,6 +26,8 @@ public class Games extends AppCompatActivity {
         pointView.setText(pointCount + "");
     }
 
+    //Makes button launch Breakout
+    //Edit this so that it also removes points from the counter
     public void buttonOnClick(View v) {
         Button button=(Button) v;
         startActivity(new Intent(getApplicationContext(), BreakoutGame.class));
