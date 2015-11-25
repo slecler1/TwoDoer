@@ -36,7 +36,8 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@mipmap/gamebutton"
+        android:text="Breakout"
+        android:onClick="buttonOnClick"
         android:id="@+id/button2"
         android:layout_marginTop="123dp"
         android:layout_alignParentTop="true"

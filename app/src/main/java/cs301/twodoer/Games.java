@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Games extends AppCompatActivity {
@@ -22,6 +24,11 @@ public class Games extends AppCompatActivity {
 
         TextView pointView = (TextView) findViewById(R.id.editText3);
         pointView.setText(pointCount + "");
+    }
+
+    public void buttonOnClick(View v) {
+        Button button=(Button) v;
+        startActivity(new Intent(getApplicationContext(), BreakoutGame.class));
     }
 
     @Override
