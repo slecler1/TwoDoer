@@ -36,12 +36,12 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="Breakout"
         android:onClick="buttonOnClick"
         android:id="@+id/button2"
         android:layout_marginTop="129dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/gamebutton"/>
 
     <TextView
         android:layout_width="wrap_content"
