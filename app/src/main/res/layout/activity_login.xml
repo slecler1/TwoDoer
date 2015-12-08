@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
+    <!--Creates input field view for the user's username/email-->
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:width="300dp"/>
-
+    <!--Creates the input field view for the user's password-->
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="47dp"
         android:width="300dp"/>
-
+    <!--Creates the Login button-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

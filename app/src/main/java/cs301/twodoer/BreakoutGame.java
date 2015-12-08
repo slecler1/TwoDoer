@@ -20,6 +20,9 @@ import android.view.SurfaceView;
 
 import java.io.IOException;
 
+/* Comments were included with the code which came from the "Coding a Breakout (Arkanoid) game for Android" tutorial */
+/* This tutorial can be found at: http://gamecodeschool.com/android/coding-a-breakout-game-for-android/ */
+
 public class BreakoutGame extends Activity {
 
     // gameView will be the view of the game
@@ -104,7 +107,6 @@ public class BreakoutGame extends Activity {
         public BreakoutView(Context context) {
             // The next line of code asks the
             // SurfaceView class to set up our object.
-            // How kind.
             super(context);
 
             // Initialize ourHolder and paint objects
@@ -420,4 +422,3 @@ public class BreakoutGame extends Activity {
     }
 
 }
-// This is the end of the BreakoutGame class

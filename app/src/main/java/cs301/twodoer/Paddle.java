@@ -2,6 +2,8 @@ package cs301.twodoer;
 
 import android.graphics.RectF;
 
+/*This code defines the Paddle object for the Breakout game*/
+/*Code and comments came from http://gamecodeschool.com/android/coding-a-breakout-game-for-android/*/
 public class Paddle {
 
     // RectF is an object that holds four coordinates - just what we need

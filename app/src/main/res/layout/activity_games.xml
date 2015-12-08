@@ -6,7 +6,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context="cs301.twodoer.Games">
-
+    <!--Crates the display for the points counter-->
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -20,7 +20,7 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:gravity="right"/>
-
+    <!--Displays the 2-Doer logo in the bottom bar-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
         android:layout_alignTop="@+id/editText3" />
-
+    <!--Creates the Breakout game button-->
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -42,7 +42,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:background="@mipmap/gamebutton"/>
-
+    <!--Creates the text for the number of points required to play Breakout once-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
         android:textStyle="bold"
         android:textColor="#000000"
        />
-
+    <!--Displays the 2-Doer logo next to the number of points required for the game-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

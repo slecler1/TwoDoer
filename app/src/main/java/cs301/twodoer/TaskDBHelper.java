@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-//A helper class which is used to open the database   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
+/*A helper class which is used to open the database and create the tasks table   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)*/
 public class TaskDBHelper extends SQLiteOpenHelper {
 
     public TaskDBHelper(Context context) {
@@ -25,6 +25,7 @@ public class TaskDBHelper extends SQLiteOpenHelper {
         sqlDB.execSQL(sqlQuery);
     }
 
+    //onUpgrade the tasks table is dropped if it exists, and then onCreate is called to recreate it
     @Override
     public void onUpgrade(SQLiteDatabase sqlDB, int i, int i2) {
         sqlDB.execSQL("DROP TABLE IF EXISTS "+TaskContract.TABLE);
