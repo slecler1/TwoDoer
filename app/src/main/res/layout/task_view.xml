@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    //Defines how the specific task items will look. Creates a text view with a "Done" button    (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
+    <!--Defines how the specific task items will look. Creates a text view with a "Done" button    (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         android:layout_toLeftOf="@+id/doneButton"
         android:layout_alignBottom="@+id/doneButton"
         android:gravity="center_vertical" />
-
+    <!--Creates the Done button for each task-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,6 +29,7 @@
         android:layout_alignParentEnd="true"
         android:onClick="onDoneButtonClick" />
 
+    <!--Displays the task's priority, will be implemented fully in Version 2-->
     <!--<TextView
         android:id="@+id/Priority"
         android:layout_width="wrap_content"

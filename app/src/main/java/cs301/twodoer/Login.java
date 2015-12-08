@@ -14,9 +14,10 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
     }
-    /** Called when the user clicks the Login button */
+    // Called when the user clicks the Login button
     public void buttonOnClick(View v) {
         Button button=(Button) v;
+        //Clicking the button will navigate to the to-do list page
         startActivity(new Intent(getApplicationContext(), Home.class));
     }
 }

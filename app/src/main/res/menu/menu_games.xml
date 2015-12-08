@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
+<!--Displays the options menu for the Games screen-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     //Creates the "Add Task" menu   (Used Aldo Ziflaj's "Starting Android Development, Creating a Todo App" tutorial at http://www.sitepoint.com/starting-android-development-creating-todo-app/ to create this)
+    <!--Creates the 2-Do List menu item-->
     <item android:id="@+id/action_2_do_list"
         android:showAsAction="always"
         android:icon="@android:drawable/ic_menu_add"

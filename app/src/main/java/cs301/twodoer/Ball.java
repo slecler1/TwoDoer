@@ -12,6 +12,8 @@ public class Ball {
     float ballWidth = 10;
     float ballHeight = 10;
 
+    /*This code defines the ball object for the Breakout game*/
+    /*Code and comments came from http://gamecodeschool.com/android/coding-a-breakout-game-for-android/*/
     public Ball(int screenX, int screenY){
 
         // Start the ball travelling straight up at 100 pixels per second
