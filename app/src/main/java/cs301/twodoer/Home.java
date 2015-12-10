@@ -102,7 +102,7 @@ public class Home extends AppCompatActivity {
                 //Points counter is incremented by 100
                 pointCount += 100;
 
-                //New value of the points coutner is stored as a shared preference so that it can be retrieved later
+                //New value of the points counter is stored as a shared preference so that it can be retrieved later
                 SharedPreferences app_preferences =
                         getSharedPreferences("temp", getApplicationContext().MODE_PRIVATE);
                 SharedPreferences.Editor editor = app_preferences.edit();

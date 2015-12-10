@@ -22,7 +22,7 @@ import java.io.IOException;
 
 /* Comments were included with the code which came from the "Coding a Breakout (Arkanoid) game for Android" tutorial */
 /* This tutorial can be found at: http://gamecodeschool.com/android/coding-a-breakout-game-for-android/ */
-
+/*Comments that use the /*... format were added by the team*/
 public class BreakoutGame extends Activity {
 
     // gameView will be the view of the game
@@ -119,9 +119,11 @@ public class BreakoutGame extends Activity {
             Point size = new Point();
             display.getSize(size);
 
+            /*Set the size of the screen*/
             screenX = size.x;
             screenY = size.y;
 
+            /*Create a paddle using the paddle helper class*/
             paddle = new Paddle(screenX, screenY);
 
             // Create a ball
@@ -167,6 +169,7 @@ public class BreakoutGame extends Activity {
             // Put the ball back to the start
             ball.reset(screenX, screenY);
 
+            /*Set the height and width of each brick*/
             int brickWidth = screenX / 8;
             int brickHeight = screenY / 10;
 
@@ -218,7 +221,7 @@ public class BreakoutGame extends Activity {
         }
 
         // Everything that needs to be updated goes in here
-        // Movement, collision detection etc.
+        // Movement, collision detection, etc.
         public void update() {
 
             // Move the paddle if required
@@ -258,6 +261,7 @@ public class BreakoutGame extends Activity {
                 lives --;
                 soundPool.play(loseLifeID, 1, 1, 0, 0, 1);
 
+                /*Restart the game if lives run out*/
                 if(lives == 0){
                     paused = true;
                     createBricksAndRestart();
@@ -362,7 +366,7 @@ public class BreakoutGame extends Activity {
 
         }
 
-        // If SimpleGameEngine Activity is started theb
+        // If SimpleGameEngine Activity is started then
         // start our thread.
         public void resume() {
             playing = true;
